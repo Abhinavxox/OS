@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
-
 # include <stdio.h>
 
 void  sum_of_positive(int a){
@@ -10,15 +9,17 @@ void  sum_of_positive(int a){
     for(int i=1;i<=a;i++){
         s=s+i;
     }
-    printf("%d",s);
+    printf("Sum of positive numbers is %d",s);
+    printf("\n Identifier ID is [%d] \n ",getpid()); 
 }
+
 void sum_of_factorial(int a){
-int s1 = 1;
+    int s1 = 1;
     for(int i=1;i<=a;i++){
         s1=s1*i;
     }
-    printf("%d",s1);
-
+    printf("Sum of factorial is %d",s1);
+    printf("\n Identifier ID is [%d] \n ",getpid()); 
 }
 
 int main(){
@@ -27,18 +28,15 @@ int main(){
     scanf("%d",&n);
     ret = fork();
     if(ret ==0){
-    ret1 = fork();
-    if(ret1 == 0){
-    sum_of_factorial(n);
-    printf("%s","\n");
-    printf("\n Identifier ID is [%d] \n ",getpid());    
-}
-    else{
-    sum_of_positive(n);
-    printf("%s","\n");
-    printf("\n Identifier ID is [%d] \n ",getpid());
+        ret1 = fork();
+        if(ret1 == 0){
+            sum_of_factorial(n);
+        }
+        else{
+            sum_of_positive(n);
+        }
     }
-    }
+    
     else{
     wait(NULL);
     wait(NULL);
