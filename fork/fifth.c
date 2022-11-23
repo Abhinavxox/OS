@@ -39,7 +39,6 @@ int main(){
     
     else{
     wait(NULL);
-    wait(NULL);
     printf("\n DONE \n");
     printf("\n Identifier ID is [%d] \n ",getpid());
     
