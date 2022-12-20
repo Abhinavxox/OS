@@ -11,7 +11,8 @@ int main()
     p = fork();
     if(p>0)
     {
-        printf("Passing value to child \n");
+        //if in parent
+        printf("Passing value to child \n");=
         write(fd[1], "hello\n", 6);
     }
     

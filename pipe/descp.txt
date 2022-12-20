@@ -1,0 +1,12 @@
+This is a C program that demonstrates the use of the pipe() function and the fork() system call in Unix-like operating systems.
+
+The pipe() function creates a pipe, which is a type of interprocess communication that allows data to be transferred between two processes. A pipe has a read end and a write end, and data written to the write end of the pipe can be read from the read end of the pipe.
+
+The fork() system call creates a new process by duplicating the calling process. The new process is called the child process, and the calling process is called the parent process. The child process has a copy of the parent process's memory, and the two processes can communicate with each other using the pipe created by the pipe() function.
+
+In this program, the parent process writes the string "hello" to the write end of the pipe, and the child process reads the string from the read end of the pipe and writes it to the standard output (the terminal).
+
+The write() function is used to write data to a file descriptor, and the read() function is used to read data from a file descriptor. The 1 in the write(1, buffer, n) statement is the file descriptor for standard output. The wait() function is used to wait for the child process to terminate.
+
+
+
