@@ -25,7 +25,7 @@ int main()
 	pthread_t tid;
 
 	// 3 threads
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 5; i++)
 		pthread_create(&tid, NULL, myThreadFun, (void *)&tid);
 
 	pthread_exit(NULL);

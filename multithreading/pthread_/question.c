@@ -36,7 +36,7 @@ int main()
     printf("Enter a number: ");
     scanf("%d", &x);
     pthread_create(&sumThread_id, NULL, sumThread, x);
-    pthread_create(&factorialThread_id, NULL, factorialThread, NULL);
+    pthread_create(&factorialThread_id, NULL, factorialThread, x);
     pthread_join(sumThread_id, NULL);
     pthread_join(factorialThread_id, NULL);
     exit(0);
