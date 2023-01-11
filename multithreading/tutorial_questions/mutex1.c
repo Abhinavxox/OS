@@ -27,8 +27,8 @@ main()
 }
 void *functionC()
 {
-pthread_mutex_lock( &mutex1 );
+// pthread_mutex_lock( &mutex1 );
  counter++;
  printf("Counter value: %d\n",counter);
-pthread_mutex_unlock( &mutex1 );
+// pthread_mutex_unlock( &mutex1 );
 }
