@@ -17,12 +17,15 @@ pthread_create( &thread_id[i], NULL, thread_function, NULL );
  {
 pthread_join( thread_id[j], NULL);
  }
- /* Now that all threads are complete I can print the final result. */ /* Without the join I could be printing a value before all the threads */ /* have been completed. */ printf("Final counter value: %d\n", counter);
+ /* Now that all threads are complete I can print the final result. */ /* Without the join I could be printing a value before all the threads */ /* have been completed. */ 
+printf("Final counter value: %d\n", counter);
 }
+
 void *thread_function(void *dummyPtr)
 {
  printf("Thread number %ld\n", pthread_self());
  pthread_mutex_lock( &mutex1 );
  counter++;
+ sleep(1);
  pthread_mutex_unlock( &mutex1 );
 }

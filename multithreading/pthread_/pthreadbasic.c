@@ -23,7 +23,7 @@ int main()
 /*
 This is a simple program that creates a new thread using the pthread_create function and waits for it to complete using the pthread_join function.
 
-The pthread_create function takes four arguments:
+The pthread_create function takes four arguments
 
 A pointer to a pthread_t variable that will receive the ID of the new thread.
 A pointer to a pthread_attr_t structure that specifies thread attributes. In this case, it is set to NULL, which means that default attributes will be used.
